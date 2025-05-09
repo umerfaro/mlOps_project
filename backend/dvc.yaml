@@ -1,0 +1,23 @@
+stages:
+  collect_data:
+    cmd: python src/data_collection.py
+    deps:
+      - src/data_collection.py
+    outs:
+      - data/raw/raw_data.csv
+    
+  preprocess_data:
+    cmd: python src/data_preprocessing.py
+    deps:
+      - src/data_preprocessing.py
+      - data/raw/raw_data.csv
+    outs:
+      - data/processed/processed_data.csv
+    
+  train_model:
+    cmd: python src/model_training.py
+    deps:
+      - src/model_training.py
+      - data/processed/processed_data.csv
+    outs:
+      - models/model.pkl

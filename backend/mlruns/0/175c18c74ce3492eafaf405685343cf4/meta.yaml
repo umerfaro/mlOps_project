@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Semesters/Semester%202/MlOps-Task-07/mlruns/0/175c18c74ce3492eafaf405685343cf4/artifacts
+end_time: 1733479844846
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 175c18c74ce3492eafaf405685343cf4
+run_name: agreeable-hog-448
+run_uuid: 175c18c74ce3492eafaf405685343cf4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733479832780
+status: 3
+tags: []
+user_id: ThinkPad

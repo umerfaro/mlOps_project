@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Semesters/Semester%202/MlOps-Task-07/mlruns/217151711291447504/3c25bb004c0d4a59ab1c952ddcba5a2f/artifacts
+end_time: 1733480973525
+entry_point_name: ''
+experiment_id: '217151711291447504'
+lifecycle_stage: active
+run_id: 3c25bb004c0d4a59ab1c952ddcba5a2f
+run_name: inquisitive-tern-311
+run_uuid: 3c25bb004c0d4a59ab1c952ddcba5a2f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733480959880
+status: 3
+tags: []
+user_id: ThinkPad

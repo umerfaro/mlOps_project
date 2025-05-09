@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Semesters/Semester%202/MlOps-Task-07/mlruns/0/098b52cefec04ecf98f44a0cdbfe412c/artifacts
+end_time: 1733479499093
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 098b52cefec04ecf98f44a0cdbfe412c
+run_name: worried-kite-176
+run_uuid: 098b52cefec04ecf98f44a0cdbfe412c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733479479340
+status: 3
+tags: []
+user_id: ThinkPad

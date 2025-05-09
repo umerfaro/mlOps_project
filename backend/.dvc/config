@@ -1,0 +1,4 @@
+[core]
+    remote = gdrive
+['remote "gdrive"']
+    url = E:\Semester8\MLOps\MLOps_A3\MlOps-Project\localstorage
