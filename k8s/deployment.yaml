@@ -1,0 +1,61 @@
+# Backend Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+          - name: backend
+            image: muhammadranaumerofficial754/weather-app-backend:testing
+            ports:
+                - containerPort: 5000
+            env:
+                - name: WEATHER_API_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: weather-secrets
+                      key: api-key
+            resources:
+              limits:
+                cpu: "500m"
+                memory: "512Mi"
+              requests:
+                cpu: "200m"
+                memory: "256Mi"
+---
+# Frontend Deployment
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image:  muhammadranaumerofficial754/weather-app-frontend:testing
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              cpu: "300m"
+              memory: "256Mi"
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
