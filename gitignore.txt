@@ -1,0 +1,4 @@
+backend/logs/
+backend/mlruns/
+backend/myenv/
+backend/.env
