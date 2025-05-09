@@ -43,9 +43,9 @@ jobs:
 
       - name: Deploy core resources
         run: |
-          kubectl apply -f k8s/configmap.yaml -n weather-app
-          kubectl apply -f k8s/service.yaml   -n weather-app
-          kubectl apply -f k8s/deployment.yaml -n weather-app
+          kubectl apply -f k8s/configmap.yaml         -n weather-app
+          kubectl apply -f k8s/service.yaml           -n weather-app
+          kubectl apply -f k8s/deployment.yaml        -n weather-app
           kubectl apply -f k8s/persistent-volume.yaml -n weather-app
 
       - name: Deploy ingress
@@ -69,7 +69,7 @@ jobs:
         run: |
           kubectl logs -n weather-app -l app=backend --tail=50
 
-      - name: Get all service URLs
+      - name: List all service URLs
         run: |
           minikube service list -n weather-app
 
@@ -77,9 +77,9 @@ jobs:
         id: frontend_url
         run: |
           URL=$(minikube service frontend-service -n weather-app --url)
-          echo "Frontend URL=$URL" >> $GITHUB_OUTPUT
+          echo "service_url=$URL" >> $GITHUB_OUTPUT
 
       - name: Smoke-test frontend
         run: |
-          echo "Pinging ${{ steps.frontend_url.outputs.Frontend URL }}"
-          curl --fail ${{ steps.frontend_url.outputs.Frontend URL }}/healthz
+          echo "Pinging ${{ steps.frontend_url.outputs.service_url }}"
+          curl --fail "${{ steps.frontend_url.outputs.service_url }}/healthz"
