@@ -4,6 +4,7 @@ on:
     branches:
       - production
       - main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -11,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Kubernetes
+      - name: Set up Kubernetes CLI
         uses: Azure/setup-kubectl@v3
 
       - name: Set up Minikube
@@ -42,40 +43,43 @@ jobs:
 
       - name: Deploy core resources
         run: |
-          # Apply everything except ingress first
           kubectl apply -f k8s/configmap.yaml -n weather-app
-          kubectl apply -f k8s/service.yaml -n weather-app
+          kubectl apply -f k8s/service.yaml   -n weather-app
           kubectl apply -f k8s/deployment.yaml -n weather-app
           kubectl apply -f k8s/persistent-volume.yaml -n weather-app
 
       - name: Deploy ingress
         run: |
-          # Apply ingress after other resources are ready
           kubectl apply -f k8s/ingress.yaml -n weather-app
 
       - name: Wait for deployments
         continue-on-error: true
         run: |
-          timeout 100s kubectl wait --for=condition=available deployment/backend-deployment -n weather-app || true
+          timeout 100s kubectl wait --for=condition=available deployment/backend-deployment  -n weather-app || true
           timeout 100s kubectl wait --for=condition=available deployment/frontend-deployment -n weather-app || true
 
       - name: Get deployment status
         continue-on-error: true
         run: |
           kubectl get deployments -n weather-app
-          kubectl get pods -n weather-app
+          kubectl get pods        -n weather-app
 
       - name: Get backend pod logs
         continue-on-error: true
         run: |
-          kubectl logs -n weather-app backend-deployment-66cc6b7f5-d65ck  # Replace with actual pod name if different
-          kubectl logs -n weather-app backend-deployment-66cc6b7f5-pg57s  # Replace with actual pod name if different
+          kubectl logs -n weather-app -l app=backend --tail=50
 
-      - name: Get service URLs
-        continue-on-error: true
+      - name: Get all service URLs
         run: |
           minikube service list -n weather-app
 
-      - name: Port forward frontend service
+      - name: Get frontend URL
+        id: frontend_url
         run: |
-          kubectl port-forward -n weather-app service/frontend-service 8080:80
+          URL=$(minikube service frontend-service -n weather-app --url)
+          echo "Frontend URL=$URL" >> $GITHUB_OUTPUT
+
+      - name: Smoke-test frontend
+        run: |
+          echo "Pinging ${{ steps.frontend_url.outputs.Frontend URL }}"
+          curl --fail ${{ steps.frontend_url.outputs.Frontend URL }}/healthz
