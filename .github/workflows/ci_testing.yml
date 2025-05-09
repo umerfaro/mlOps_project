@@ -2,7 +2,7 @@ name: CI Testing Pipeline
 on:
   push:
     branches:
-      - testing
+      - test
       - main
 jobs:
   build-test:
