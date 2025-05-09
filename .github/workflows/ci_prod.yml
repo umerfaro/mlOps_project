@@ -2,7 +2,7 @@ name: CD Production Pipeline
 on:
   push:
     branches:
-      - prod
+      - production
       - main
 jobs:
   deploy:
