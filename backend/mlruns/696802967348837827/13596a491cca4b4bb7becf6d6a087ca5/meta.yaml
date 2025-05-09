@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Semesters/Semester%202/MlOps-Task-07/mlruns/696802967348837827/13596a491cca4b4bb7becf6d6a087ca5/artifacts
+end_time: 1733480616113
+entry_point_name: ''
+experiment_id: '696802967348837827'
+lifecycle_stage: active
+run_id: 13596a491cca4b4bb7becf6d6a087ca5
+run_name: overjoyed-mink-870
+run_uuid: 13596a491cca4b4bb7becf6d6a087ca5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1733480598605
+status: 3
+tags: []
+user_id: ThinkPad

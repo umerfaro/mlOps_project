@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  backend:
+    image: muhammadranaumerofficial754/Mlops-Project-backend
+    build: 
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - postgres
+
+  frontend:
+    image: muhammadranaumerofficial754/Mlops-Project-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+
+  postgres:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres-data:
