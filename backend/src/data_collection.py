@@ -81,7 +81,7 @@ def main():
     if not api_key:
         raise ValueError("No API key found. Please set WEATHER_API_KEY in .env file")
     
-    mlflow.set_tracking_uri("http://127.0.0.1:8082")
+    mlflow.set_tracking_uri("http://127.0.0.1:8081")
     
     collector = WeatherDataCollector(api_key)
     collector.collect_weather_data(interval_seconds=2)

@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Semesters/Semester%202/MlOps-Task-07/mlruns/217151711291447504/e0957e56868c4f6aabd3465c3e15f428/artifacts
+end_time: 1746966766240
+entry_point_name: ''
+experiment_id: '217151711291447504'
+lifecycle_stage: active
+run_id: e0957e56868c4f6aabd3465c3e15f428
+run_name: nebulous-carp-224
+run_uuid: e0957e56868c4f6aabd3465c3e15f428
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746966756058
+status: 3
+tags: []
+user_id: umerm
