@@ -1,4 +1,10 @@
-python-dotenv
+flask==3.0.2
+flask-cors==4.0.0
+flask-pymongo==2.3.0
+flask-jwt-extended==4.6.0
+pymongo==4.6.1
+python-dotenv==1.0.1
+werkzeug==3.0.1
 requests
 pandas
 scikit-learn
@@ -7,7 +13,5 @@ dvc
 python-dateutil
 seaborn
 mlflow
-flask_cors
-flask_pymongo
 pytest==7.4.0
 pytest-cov==4.1.0
