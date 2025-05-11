@@ -5,7 +5,7 @@ pipeline {
     // Jenkins credential ID for Docker Hub (username+password)
     DOCKERHUB_CREDS = 'dockerhub-credentials'
     // path to your compose file
-    COMPOSE_FILE    = 'docker-compose.yml'
+    COMPOSE_FILE    = 'docker-compose.yaml'
   }
 
   stages {
