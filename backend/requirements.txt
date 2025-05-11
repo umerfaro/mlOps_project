@@ -11,3 +11,4 @@ flask_cors
 flask_pymongo
 pytest==7.4.0
 pytest-cov==4.1.0
+flask_jwt_extended

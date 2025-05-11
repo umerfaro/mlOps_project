@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   backend:
-    image: muhammadranaumerofficial754/mlops-project-backend:latest
+    image: muhammadranaumerofficial754/mlops-project-new-backend:latest
     build: 
       context: ./backend
       dockerfile: Dockerfile
@@ -14,7 +14,7 @@ services:
       - postgres
 
   frontend:
-    image: muhammadranaumerofficial754/mlops-project-frontend:latest
+    image: muhammadranaumerofficial754/mlops-project-new-frontend:latest
     build:
       context: ./frontend
       dockerfile: Dockerfile
