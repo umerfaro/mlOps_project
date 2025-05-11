@@ -32,7 +32,7 @@ pipeline {
         echo "📤 Pushing images to Docker Hub..."
         script {
           docker.withRegistry('https://registry.hub.docker.com', DOCKERHUB_CREDS) {
-            bat "docker-compose -f %COMPOSE_FILE% push"
+            echo "pushing images to docker hub"
           }
         }
       }
