@@ -1,20 +1,45 @@
 
 FROM node:16-alpine
 
+# Set working directory
 WORKDIR /app
 
-# Copy package files and install dependencies
+# Install dependencies
 COPY package*.json ./
 RUN npm install
 
-# Copy the rest of the application
+# Copy application source
 COPY . .
 
-# Expose the port used by `npm start`
+# Expose development port
 EXPOSE 3000
 
-# Start the development server
+# Ensure react-scripts is available
+RUN npm install react-scripts
+
+# Start development server
 CMD ["npm", "start"]
+
+
+
+
+
+# FROM node:16-alpine
+
+# WORKDIR /app
+
+# # Copy package files and install dependencies
+# COPY package*.json ./
+# RUN npm install
+
+# # Copy the rest of the application
+# COPY . .
+
+# # Expose the port used by `npm start`
+# EXPOSE 3000
+
+# # Start the development server
+# CMD ["npm", "start"]
 
 
 
