@@ -17,7 +17,7 @@ pipeline {
 
     stage('Build Images') {
       steps {
-        echo "Building all services via docker-compose..."
+        echo "Building all services2fa via docker-compose..."
         sh "docker-compose -f ${COMPOSE_FILE} build --pull"
       }
     }
