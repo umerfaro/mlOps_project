@@ -32,7 +32,9 @@ pipeline {
         echo "📤 Pushing images to Docker Hub..."
         script {
           docker.withRegistry('https://registry.hub.docker.com', DOCKERHUB_CREDS) {
+
             echo "pushing images to docker hub again"
+
           }
         }
       }
