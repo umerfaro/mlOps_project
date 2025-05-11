@@ -12,6 +12,9 @@ import time
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Set MLflow tracking URI
+mlflow.set_tracking_uri("http://127.0.0.1:8081")
+
 class WeatherModel:
     def __init__(self, experiment_name="weather_prediction"):
         """Initialize the model with MLflow experiment tracking."""

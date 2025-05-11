@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Semesters/Semester%202/MlOps-Task-07/mlruns/217151711291447504/53d955d871fa4d4d8160e24bcb2ca33c/artifacts
+end_time: 1746966132549
+entry_point_name: ''
+experiment_id: '217151711291447504'
+lifecycle_stage: active
+run_id: 53d955d871fa4d4d8160e24bcb2ca33c
+run_name: able-crane-606
+run_uuid: 53d955d871fa4d4d8160e24bcb2ca33c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1746966122140
+status: 3
+tags: []
+user_id: umerm
