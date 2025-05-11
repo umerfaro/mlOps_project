@@ -1,6 +1,6 @@
 Model Coefficients Explanation:
 
-humidity: -0.8219 - For each unit increase in humidity, temperature changes by -0.8219 units
-wind_speed: -0.1544 - For each unit increase in wind_speed, temperature changes by -0.1544 units
+humidity: -0.2012 - For each unit increase in humidity, temperature changes by -0.2012 units
+wind_speed: 0.7371 - For each unit increase in wind_speed, temperature changes by 0.7371 units
 
-Intercept: -0.0340
+Intercept: -0.1285

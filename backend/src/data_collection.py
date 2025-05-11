@@ -4,6 +4,7 @@ import pandas as pd
 from datetime import datetime
 import time
 from dotenv import load_dotenv
+import mlflow
 
 class WeatherDataCollector:
     def __init__(self, api_key):
@@ -79,6 +80,8 @@ def main():
     api_key = os.getenv('WEATHER_API_KEY')
     if not api_key:
         raise ValueError("No API key found. Please set WEATHER_API_KEY in .env file")
+    
+    mlflow.set_tracking_uri("http://127.0.0.1:8082")
     
     collector = WeatherDataCollector(api_key)
     collector.collect_weather_data(interval_seconds=2)
